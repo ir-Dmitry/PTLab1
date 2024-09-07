@@ -3,7 +3,9 @@ import pytest
 from src.Types import DataType
 from src.TextDataReader import TextDataReader
 
+
 class TestTextDataReader:
+
     @pytest.fixture()
     def file_and_data_content(self) -> tuple[str, DataType]:
         text = (
@@ -14,6 +16,7 @@ class TestTextDataReader:
             " русский язык:87\n"
             " литература:78\n"
         )
+
         data = {
             "Иванов Константин Дмитриевич": [
                 ("математика", 91), ("химия", 100)
