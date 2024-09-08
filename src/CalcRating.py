@@ -17,3 +17,14 @@ class CalcRating:
                 self.rating[key] += subject[1]
             self.rating[key] /= len(self.data[key])
         return self.rating
+
+    def calc_academic_debts(self) -> int:
+        debt_count = 0
+        for key in self.data:
+            debt_subject_count = 0
+            for subject in self.data[key]:
+                if subject[1] < 61:
+                    debt_subject_count += 1
+            if debt_subject_count == 2:
+                debt_count += 1
+        return debt_count
